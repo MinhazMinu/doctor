@@ -8,7 +8,6 @@ const AppointmentHeroSection = () => {
   const [date, setDate] = useState(new Date());
   const [appointmentType, setAppointmentType] = useState(null);
   const [display, setDisplay] = useState("none");
-  let onChange = (date) => setDate(date);
 
   useEffect(() => {
     fetch("http://localhost:3200/appointments")
@@ -16,12 +15,16 @@ const AppointmentHeroSection = () => {
       .then((data) => setAppointmentType(data));
   }, []);
 
+  const handleDate = (d) => {
+    setDate(d);
+  };
+
   return (
     <>
       <div className="appointment-section">
         <div className="container">
           <div className="row" style={{ height: "100vh" }}>
-            <Calender onChange={onChange} />
+            <Calender date={date} handleDate={handleDate} />
             <div className="col-md-6 align-self-center">
               <img className="img-fluid" src={img} alt="" />
             </div>
