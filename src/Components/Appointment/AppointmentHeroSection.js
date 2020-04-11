@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./Appointment.css";
+
 import img from "../../images/banner-img.png";
 import Calender from "./Calender";
 import { useState } from "react";
