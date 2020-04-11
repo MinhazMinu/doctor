@@ -8,10 +8,10 @@ import AppointmentCard from "./AppointmentCard";
 const AppointmentHeroSection = () => {
   const [date, setDate] = useState(new Date());
   const [appointmentType, setAppointmentType] = useState(null);
-  const [display, setDisplay] = useState("none");
+  const [display, setDisplay] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3200/appointments")
+    fetch("https://doctorback.herokuapp.com/appointments")
       .then((res) => res.json())
       .then((data) => setAppointmentType(data));
   }, []);
