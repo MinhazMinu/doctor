@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AppointmentHeroSection from "./Components/Appointment/AppointmentHeroSection";
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBI4GDPVZkMcHV_nGv2DtnzONKFHv6TkQk",
@@ -28,12 +29,18 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home></Home>
+          <Footer></Footer>
         </Route>
         <Route path="/appointment">
           <AppointmentHeroSection></AppointmentHeroSection>
+          <Footer></Footer>
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard>
+            <Footer></Footer>
+          </Dashboard>
         </Route>
       </Switch>
-      <Footer></Footer>
     </Router>
   );
 }

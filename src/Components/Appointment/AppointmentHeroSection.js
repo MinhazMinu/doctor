@@ -44,6 +44,7 @@ const AppointmentHeroSection = () => {
               <AppointmentCard
                 key={item.id}
                 appointment={item}
+                date={date}
               ></AppointmentCard>
             ))}
         </div>

@@ -12,7 +12,9 @@ const Home = () => {
             </Link>
           </div>
           <div className="col-md-6 text-center">
-            <button className="btn btn-warning">DOCTOR`S</button>
+            <Link to="/dashboard">
+              <button className="btn btn-warning">DOCTOR`S</button>
+            </Link>
           </div>
         </div>
       </div>
